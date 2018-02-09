@@ -1,0 +1,31 @@
+body{background-color: lightgray;}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{ 
+  margin: auto; 
+  background-color: whitesmoke;}
+
+td{
+  width: 15px;
+  height: 15px;
+}
+
+.new{ background-color:orange; }
+.old{ background-color: orangered; }
+
+.components{
+  display:block;
+  margin: 20px auto 20px 30%;
+}
+
+// FOOTER
+a:link    {color:orangered;  text-decoration:none}
+a:visited {color:orangered; text-decoration:none}
+a:hover   {color:red; text-decoration:underline} 
+
+#footerSvg{
+  width: 32px;
+}

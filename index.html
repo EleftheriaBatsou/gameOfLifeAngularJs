@@ -1,0 +1,64 @@
+<html >
+<head>
+
+<meta charset="UTF-8">
+	<title>Game Of Life - AngularJS</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div ng-app="gameOfLifeApp" ng-controller="gameOfLifeCtrl"> 
+  
+  <h3 style="text-align: center">Game Of Life</h3>
+  <h5 style="text-align: center"><a target="_blank" href="https://youtu.be/oO4WPfTkuNk">Video Tutorial</a></h5>
+ 
+   <table>
+     <tr ng-repeat='row in rows'>
+      <td ng-click=activate(rows.indexOf(row),$index) 
+          ng-repeat='col in row.cols'
+          ng-class="{'new':col.active == 1, 'old':col.active >1 }">        
+     </tr>
+   </table>
+  
+   <div class="components">
+   <button ng-click="stopGame();">stop</button>
+   <button ng-click="startGame(false);">start</button>
+   <button ng-click="clear();">clear</button>
+   Generation: {{generation}}
+  </div>
+   
+  <div class="text-center" id="footer" style="text-align:center"> <!-- for footer -->
+      <div class="col-xs-6">
+      <h5><a href="http://www.eleftheriabatsou.com" target="_blank">Eleftheria</a> | <a href="https://codepen.io/EleftheriaBatsou" target="_blank">Projects</a> | <a href="https://www.youtube.com/channel/UCC-WwYv3DEW7Nkm_IP6VeQQ" target="_blank"> Coding videos </a></h5>
+      </div>
+      <!-- social media -->
+      <div class="col-xs-6 text-primary">
+        <a href="https://twitter.com/BatsouElef" target="_blank">
+     <img src="https://left.gr/sites/all/themes/newleft/images/socialicons/twitter.png" 
+      style="text-align:center" alt="twitter"> 
+    </a>
+         <a href="https://github.com/EleftheriaBatsou" target="_blank">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqSttU57LZvtB2Y77j2E2EkC6qgiTbYjVK75XU2SOzUXz2EFjX" 
+      style="text-align:center" alt="github"> 
+    </a>
+        <a href="https://www.youtube.com/channel/UCC-WwYv3DEW7Nkm_IP6VeQQ" target="_blank">
+     <img id="footerSvg" src="https://image.flaticon.com/icons/svg/25/25312.svg" 
+       style="text-align:center" alt="youtube"> 
+    </a>
+      </div>
+    </div> <!-- end footer -->
+  
+  
+</div>
+
+
+  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js'></script>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>
